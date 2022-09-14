@@ -5,7 +5,7 @@
 #For multiple branches use comma separate the values 
 
 ExcludeBranches=$(echo "$2" | tr "," "|")
-git pull origin
+git pull origin -all
 if [ -z "$ExcludeBranches" ]
   then 
 	GitBranches=$(git branch -a | grep -i "$1" | awk -F "/" '{print $3}' | awk '{if(NF>0) {print $0}}')
